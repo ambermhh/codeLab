@@ -32,3 +32,37 @@ function analyseSentence(sentence){
     return result;
 }
 console.log(analyseSentence('I love chocolate but i hate that it makes me fat.'))
+
+
+
+function test(a, b){
+   let result = a - b;
+    return result;
+}
+console.log(test(45, 30));
+
+function example(a, b){
+    let result = a / b;
+    return result;
+}
+
+console.log(example(60, 30))
+
+function math(a, b){
+    let result = a * b;
+    return result;
+}
+
+console.log(math(5, 9));
+
+
+
+function helloName(){
+    let name = document.getElementById();
+
+    console.log("Hello, " + name + "!");
+    return name;
+}
+
+
+helloName()
