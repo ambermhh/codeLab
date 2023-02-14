@@ -58,7 +58,7 @@ console.log(math(5, 9));
 
 
 function helloName(){
-    let name = document.getElementById();
+    let name = "Amber";
 
     console.log("Hello, " + name + "!");
     return name;
