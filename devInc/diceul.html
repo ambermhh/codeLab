@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+</head>
+<body>
+    <h1><b>Dice Generator</b> </h1>
+
+
+    <label>Number of sides</label>
+    <select id="dicesides" name = "dicesides">
+        <option>--Please choose an option</option>
+        <option >6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+    </select>
+    
+    <button onclick="rollDice()">Gernerate</button>
+    <p>Your result is</p>
+    <p id="diceface"></p>
+    
+<script src="diceroller.js"></script>
+</body>
+</html>
