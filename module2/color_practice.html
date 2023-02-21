@@ -8,12 +8,12 @@
     <style >
         :root{
         font-family: 'Ubuntu', sans-serif;
-        margin:50px;
+        margin: 30px;
         
         
         }
 
-        h1 {font-size: 60px;color:grey;letter-spacing: 2px;}
+        h1 {font-size: 60px;color:grey;letter-spacing: 2px; margin: 0;}
        
       
         
@@ -22,28 +22,32 @@
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
-          padding-left: 10vh;
+          padding:10px;
           
           
         }
         .photos img{
           display: block;
-          width: 400px;
+          width: 500px;
           height: 600px;
-          margin: 35px;
+          margin: 40px;
           object-fit: cover;
           object-position: center;
+          padding: 20px;
+          max-width: 100%;
         }
 
         .list{
-          float: right;
           font-weight: bold;
           list-style-type: none;
-          margin-right: 200px;
-          margin-top: -80px;
-         
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          padding: 0;
         }
-        
+        .list li a {
+          padding: 2em;
+        }
         .photo {
           position: relative;
           text-align: center;
@@ -58,64 +62,76 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          color: beige;
+          
           
           }
-  
+        
+        
     
-     
-     a:link {text-decoration: none;margin-left: 90px;margin-right: 100px;margin-top: 30px;}
-     a:hover {color:rgba(169, 169, 169, 0.155);text-decoration: none;cursor: none;}
-     a:visited {color:rgb(160, 160, 160);text-decoration: none;}
+        header { display: flex; align-items: center; justify-content: space-between; }
+        a:link {text-decoration: none;}
+        a:hover {color:rgba(169, 169, 169, 0.155);text-decoration: none;cursor: none;}
+        a:visited{color:rgb(160, 160, 160);text-decoration: none;}
 
-     .footer{
-      text-align:center;
-      color: grey;
-      
-     }
+        .footer{
+          text-align:center;
+          color: grey;
+          margin:auto;
+          
+        }
+
+          @media screen and (max-width: 425px) {
+              .list { margin: 0; }
+              header { flex-direction: column; align-items: flex-start; }
+              .photos img {
+                height: auto;
+                margin: 0; padding: 0;}
+          }
+
    
     </style>
 
 </head>
 
 <main>
-<h1><a  href="http://127.0.0.1:5500/module2/color_practice.html">AMBER HONG</a></h1>
+    <header>
+        <h1><a  href="http://127.0.0.1:5500/module2/color_practice.html">AMBER HONG</a></h1>
 
-<div>
-<ul class="list">
-  <li>
-      <a href="https://www.youtube.com/watch?v=9VwNjBcufg0">Work</a>
-  </li>
-  <li>
-      <a href="https://github.com/ambermhh/codeLab">Contact</a>
-  </li>
-</ul>
-</div>
-
+        <div>
+        <ul class="list">
+            <li>
+                <a href="https://www.youtube.com/watch?v=9VwNjBcufg0">Work</a>
+            </li>
+            <li>
+                <a href="https://github.com/ambermhh/codeLab">Contact</a>
+            </li>
+        </ul>
+        </div>
+    </header>
 
 <div class="photos">
 
-<div>
+<div >
 <div class="center">
-<a href="https://www.instagram.com/the_brigadoon_dispatch/">People</a></div>
+<a style=color:beige; cursor="none" href="https://www.instagram.com/the_brigadoon_dispatch/">People</a></div>
 <img id="photo" src="https://images.pexels.com/photos/5804257/pexels-photo-5804257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="people">
 </div>
 
 <div>
 <div class="center">
-<a href="https://www.instagram.com/icoon.be/">Architecture</a></div>
+<a style=color:beige; cursor="none" href="https://www.instagram.com/icoon.be/">Architecture</a></div>
 <img id="photo" class="architecture" src="https://images.pexels.com/photos/2815033/pexels-photo-2815033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="architecture">
 </div>
 
-<div >
+<div>
 <div class="center">
-<a href="https://www.instagram.com/outdoor/">Outdoors</a></div>
+<a style=color:beige; cursor="none" href="https://www.instagram.com/outdoor/">Outdoors</a></div>
 <img id="photo" src="https://images.pexels.com/photos/15015915/pexels-photo-15015915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="outdoors">
 </div>
 
 <div>
 <div class="center">
-<a href="https://www.instagram.com/thedoorsofldn/">City</a></div>
+<a style="color: beige;" cursor="none" href="https://www.instagram.com/thedoorsofldn/">City</a></div>
 <img id="photo" src="https://images.pexels.com/photos/1123982/pexels-photo-1123982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="city">
 </div>
 
