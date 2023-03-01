@@ -162,7 +162,7 @@ printHer(filmHer)
 // }
 // repeatTimeout(1000,10)
 
-function repeatInterval(delay, limit){
+/* function repeatInterval(delay, limit){
     let counter = 1;
 setInterval(function repeatThis(){
     console.log(`repeatInterval: repeated ` + counter + ' of ' + limit + ' times.');
@@ -171,7 +171,7 @@ setInterval(function repeatThis(){
 },delay);
 }
 repeatInterval(1000,10)
-
+ */
 
 // const delayTimer = setTimeout(printMsg, 6000, `Long Time`)
 // const lessDelayTimer = setTimeout(printMsg, 3000, `less delay time`)
@@ -180,4 +180,81 @@ repeatInterval(1000,10)
 
 // clearTimeout(neverHappenTimer)
 
+// function cachingDecorator(pureFunction) {
+//     const cache = new Map();
+//     const outerContext = this;
 
+//     return function() {
+//         //let x = arguments[0];
+//         let funcParams = Array.from(arguments).join('')
+//         if (cache.has(funcParams)) { // if there's such key in cache
+//             console.log('returned cached value for '+funcParams)
+//             return cache.get(funcParams); // read the result from it
+//         }
+//         //let result = pureFunction.call(this, ...arguments); //needed for object functions that reference 'this' for context
+//         let result = pureFunction.apply(outerContext, arguments); //can also use apply - very similar, only difference is in handling arguments
+//         //let result = pureFunction(x) //works fine for standalone functions that don't rely on 'this' for context
+//         cache.set(funcParams, result); // and cache (remember) the result
+//         console.log('generated new value '+result+' for '+funcParams)
+//         return result;
+//     };
+// }
+// function slow(x, y) {
+//     // there can be a heavy CPU-intensive job here like adding up to a large number
+//     let goal = Math.floor(Math.random() * x * 1_000_000) //random number between 0 and a million times x
+//     console.log(`slow(${x}, ${y}): randomly generated goal for ${x * 1_000_000} is ${goal}`)
+//     let random = 0;
+//     for (let i = 0; i < goal; i++)
+//     {
+//         random++
+//     }
+//     return random;
+// }
+// slow = cachingDecorator(slow);//this is where decorating happens
+// // 1. change the number of argument to slow
+// console.time('slow no caching')
+// console.log( slow(1, 2) ); // slow(1) is run, cached and the result returned
+// console.timeEnd('slow no caching')
+
+// console.time('slow with caching')
+// console.log( "Again: " + slow(1, 2) ); // slow(1) result returned from cache
+// console.timeEnd('slow with caching')
+
+// let newUser = {
+
+//     get name() {
+//       return this._name;
+//     },
+  
+//     set name(value) {
+//       if (value.length < 4) {
+//         console.log("Name is too short, need at least 4 characters");
+//         return;
+//       }
+//       this._name = value;
+//     }
+// };
+// add an age property via getters and setters that can't be less than 0 or more than 120
+
+let userAge = {
+
+    get age(){
+        return this._age();
+    },
+
+    set age(value){
+        if (value < 0){
+            console.log(`lucky you`);
+            return;
+        }
+        if (value > 120){
+            console.log(`Good on you`)
+            return;
+        }
+        this._age = value;
+    }
+}
+userAge.age = 25;
+userAge.age = 0;
+userAge.age = 120;
+console.log(userAge.age)
