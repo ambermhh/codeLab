@@ -236,25 +236,126 @@ repeatInterval(1000,10)
 // };
 // add an age property via getters and setters that can't be less than 0 or more than 120
 
-let userAge = {
+// let userAge = {
 
-    get age(){
-        return this._age();
-    },
+//     get age(){
+//         return this._age();
+//     },
 
-    set age(value){
-        if (value < 0){
-            console.log(`lucky you`);
-            return;
-        }
-        if (value > 120){
-            console.log(`Good on you`)
-            return;
-        }
-        this._age = value;
+//     set age(value){
+//         if (value < 0){
+//             console.log(`lucky you`);
+//             return;
+//         }
+//         if (value > 120){
+//             console.log(`Good on you`)
+//             return;
+//         }
+//         this._age = value;
+//     }
+// }
+// userAge.age = 25;
+// userAge.age = 0;
+// userAge.age = 120;
+// console.log(userAge.age)
+
+
+// function slow(x){
+
+//     return x;
+// }
+
+// function newDate(func){
+//     const cache = new Map();
+//     return function(x){
+//         if(cache.has(x)){return cache.get(x)};
+//         let result = func.call(this, x);
+//         cache.set(x, result);
+//         return result;
+//     }
+// };
+
+// console.log(slow(2))
+
+
+
+// let animal = {
+//     eats: true,
+//     sleeps: true,
+//     legs: 4,
+//     mammal: true
+// };
+// //create 2 new types of animal based on the animal prototype - one using Object.create (like rabbit), and one using an F.prototype (like cat)
+// //give them some custom properties
+// //override one of the prototype properties
+
+// let horse = Object.create(animal,{
+//     jumps:{
+//         value:true,
+//         enumerable:true 
+//     }
+// })
+// console.log(horse.jumps)
+// console.log(Object.keys(horse))
+// for (let prop in horse) console.log(`${prop} is ${horse[prop]}`)
+
+// function Penguin (name){
+//     this.name = name;
+//     this.swim = true;
+// }
+// // console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(animal)))
+// Penguin.prototype = animal;
+// animal.legs = 2;
+// const penguin = new Penguin(`Gigi`);
+// console.log(`Penguin eats? ` + penguin.eats);
+
+// for (let prop in penguin) console.log(`${prop} is ${penguin[prop]}`);
+
+class Animal {
+
+    constructor(name) {
+        this.speed = 0;
+        this.name = name;
+        this.type = 'animal'
+    }
+    
+    run(speed) {
+        this.speed = speed;
+        console.log(`${this.name} runs with speed ${this.speed}.`);
+    }
+
+    stop() {
+        this.speed = 0;
+        console.log(`${this.name} stands still.`);
     }
 }
-userAge.age = 25;
-userAge.age = 0;
-userAge.age = 120;
-console.log(userAge.age)
+// create your own specific type of animal that inherits from the above Animal class
+// give it some custom properties and/or functions
+// make sure to use 'extends' and 'super'
+
+class Cat extends Animal {
+    constructor(name, legLength) 
+    {
+        super(name)
+        this.legLength = legLength
+        
+    }
+    legLengthPrint()
+    {
+        console.log(`${this.name} has really short legs -- ${this.legLength}`)
+    }
+    hide() {
+        console.log(`${this.name} hides!`);
+    }
+    stop()
+    {
+        super.stop();//call parent stop
+        this.hide();// and then hide
+    }
+    
+}
+const cat = new Cat ('Crumpet', '5cm')
+cat.legLengthPrint()
+cat.run(5)
+cat.hide()
+cat.stop()

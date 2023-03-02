@@ -50,20 +50,121 @@
  */    
 
 // Question 4
-    function camelCase(cssProp){
-        const camelUp =  cssProp.split('-');
-        const words = camelUp.map((word, index) => {
-            if (index === 0 ){
-                return word;
-            }
-            else{ return camelUp[1].charAt(0).toUpperCase() + camelUp.slice(1);}
-        })
-        return words.join("");
-       
-        };
+    // function camelCase(cssProp){
+    //     const camelUp =  cssProp.split('-');
+    //     let camel2 ="";
+    //     for(let words of camelUp){camel2 += (camel2.length == 0)? words : words.charAt(0).toUpperCase() + words.substring(1)}
+    //     // const words = camelUp.map((word, index) => {
+    //     //     if (index === 0 ){
+    //     //         return word;
+    //     //     }
+    //     //     else{ return camelUp[1].charAt(0).toUpperCase() + camelUp.substring(1);}
+    //     // })
+    //     // return words.join("");
+    //    return camel2;
+    //     };
     
-    console.log(camelCase('margin-left')) // marginLeft
-    console.log(camelCase('background-image')) // backgroundImage
-    console.log(camelCase('display')) // display
+    // console.log(camelCase('margin-left')) // marginLeft
+    // console.log(camelCase('background-image')) // backgroundImage
+    // console.log(camelCase('display')) // display
+
+// Question 5
+let twentyCents = 0.20
+let tenCents = 0.10
+// console.log(`${twentyCents} + ${tenCents} = ${twentyCents + tenCents}`)
+// 0.2 + 0.1 = 0.30000000000000004
+// We can sometimes avoid this using the toFixed function to force the number of decimal
+// places as below, but it’s not always useful:
+// let fixedTwenty = twentyCents.toFixed(2);
+// let fixedTen = tenCents.toFixed(2);
+// // console.log(fixedTwenty + fixedTen) //why is this not working?
+// // 5.a
+// // because turn into string.
+// // 5.b
+// function currencyAddition(float1, float2){
     
-    
+//     wholeNum = float1 * 100;
+//     wholeNums = float2 * 100;
+//     return result = ( wholeNum + wholeNums) / 100;
+
+// }
+//     console.log(currencyAddition(0.2,0.1));
+// 5.c
+// function currencyOperation(float1, float2, operation){
+//     result = 0;
+//      switch(operation){
+//         case  '+' :
+//            result = float1 + float2;
+//            break;
+//         case '-' :
+//            result = float1 - float2;
+//            break;
+//         case '/':
+//            result = float1 / float2;
+//            break;
+//         case '*':
+//            result = float1 * float2;
+//            break;
+//      };
+//      return result;
+//     }
+// console.log(currencyOperation(5,9,'+'))
+
+
+// Question 6
+
+// const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
+// const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+
+// function unique (duplicatesArray) {
+//     let uniqueArray = [];
+//     for (let i = 0; i < duplicatesArray.length; i++){
+//         if (uniqueArray.indexOf(duplicatesArray[i]) === -1){
+//             uniqueArray.push(duplicatesArray[i]);
+//         }
+//     }
+//     return uniqueArray;
+// }
+   
+
+// console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+// console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+
+// const groceryList = ['Milk', 'Butter','Veggies', 'Eggs', 'Milk', 'Butter', 'Ice Cream'];
+// const groceryPrice = [10,15,11,10,2,5,2,7];
+// function grocery (duplicatesArrays){
+//     let grocery1 = [];
+//     for (let i = 0 ; i < duplicatesArrays.length ; i++){
+//         if (grocery1.indexOf(duplicatesArrays[i]) === -1){
+//             grocery1.push(duplicatesArrays[i]);
+//         }
+//     }
+//     return grocery1;
+// }
+// console.log(grocery(groceryList))
+// console.log(grocery(groceryPrice))
+
+// Question 7 
+// 7.a
+const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+    ];
+
+function getBookTitle (bookId){
+    const matchBooks = books.find(matchBooks => matchBooks.id === bookId);
+    return matchBooks ? matchBooks.title : null;   
+  
+}
+console.log(getBookTitle(5))
+
+// 7.b
+function getOldBooks(){
+    const oldBooks = books.filter(oldBooks => oldBooks.year <= 1950)
+    return oldBooks
+}
+console.log(getOldBooks())
+// 7.c
