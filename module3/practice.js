@@ -1,36 +1,3 @@
-/* age = 30
-if (age <= 14){
-    console.log("You are not eligble to ride")
-}
-if (age >= 14 && age <=18){
-    console.log("The tictket is $7 ")
-}
-if (age >= 19 && age<= 65){
-    console.log("The ticket is $15")
-}
-else {
-    console.log("Free ride")
-}
- */
-
-/* function getBmi(height, weight){
-   let bmi = weight / (height * height);
-    if (bmi >= 35){
-        console.log("Your BMI is " + bmi + ",you are obese.");
-    }
-    else if(bmi >= 30){
-        console.log("Your BMI is " + bmi + ", you are slightly overweight.");
-    }
-    else if (bmi >= 25){
-        console.log("Your BMI is " + bmi + ",you have a normal weight.");
-    }
-    else{
-        console.log("Your BMI is " + bmi + ", you are underweight.");   
-    }  
-    return getBmi;
-}
-console.log(getBmi(1.65, 45))
- */
 
 //create your own object with multiple properties
 //make sure some are multiple values
@@ -139,86 +106,6 @@ printHer(filmHer)
 //     ])
 //     for (let [commonName, latinName] of plantNames.entries())
 
-// // Delay Function(Timeout)
-// function printMsg(msg){
-//     console.log(`The following message was supplied to this function: ${msg}`)
-// }
-// // Delay Function for more messages(Timeout)
-// function printMsgs(...msgs){
-//     console.log(`The following messages were supplied to this function: ${msgs.join(',')}`)
-// }
-// // Delay Function (interval):will print interval function every x time you set up 
-// const  interval = setInterval(printMsg, 2*1000, `interval function`)
-// setTimeout(() => clearInterval(interval), 20*1000)
-
-// // Nested Time out + Nested Interval
-// function repeatTimeout(delay, limit){
-//     let counter = 1;
-//     setTimeout(function repeatThis(current){
-//         console.log('repeatTimeout: repeated ' + current + 'of ' + limit + 'times.')
-//         if(current < limit) setTimeout(repeatThis, delay, current)
-//     })
-//     counter++;
-// }
-// repeatTimeout(1000,10)
-
-/* function repeatInterval(delay, limit){
-    let counter = 1;
-setInterval(function repeatThis(){
-    console.log(`repeatInterval: repeated ` + counter + ' of ' + limit + ' times.');
-    if(counter > limit) clearInterval(intervalTimer);
-    counter++;
-},delay);
-}
-repeatInterval(1000,10)
- */
-
-// const delayTimer = setTimeout(printMsg, 6000, `Long Time`)
-// const lessDelayTimer = setTimeout(printMsg, 3000, `less delay time`)
-// const neverHappenTimer =  setTimeout(printMsg, 8000, `this will never happen`)
-// const notDelayTimer = setTimeout(printMsg,0, `Dala`)
-
-// clearTimeout(neverHappenTimer)
-
-// function cachingDecorator(pureFunction) {
-//     const cache = new Map();
-//     const outerContext = this;
-
-//     return function() {
-//         //let x = arguments[0];
-//         let funcParams = Array.from(arguments).join('')
-//         if (cache.has(funcParams)) { // if there's such key in cache
-//             console.log('returned cached value for '+funcParams)
-//             return cache.get(funcParams); // read the result from it
-//         }
-//         //let result = pureFunction.call(this, ...arguments); //needed for object functions that reference 'this' for context
-//         let result = pureFunction.apply(outerContext, arguments); //can also use apply - very similar, only difference is in handling arguments
-//         //let result = pureFunction(x) //works fine for standalone functions that don't rely on 'this' for context
-//         cache.set(funcParams, result); // and cache (remember) the result
-//         console.log('generated new value '+result+' for '+funcParams)
-//         return result;
-//     };
-// }
-// function slow(x, y) {
-//     // there can be a heavy CPU-intensive job here like adding up to a large number
-//     let goal = Math.floor(Math.random() * x * 1_000_000) //random number between 0 and a million times x
-//     console.log(`slow(${x}, ${y}): randomly generated goal for ${x * 1_000_000} is ${goal}`)
-//     let random = 0;
-//     for (let i = 0; i < goal; i++)
-//     {
-//         random++
-//     }
-//     return random;
-// }
-// slow = cachingDecorator(slow);//this is where decorating happens
-// // 1. change the number of argument to slow
-// console.time('slow no caching')
-// console.log( slow(1, 2) ); // slow(1) is run, cached and the result returned
-// console.timeEnd('slow no caching')
-
-// console.time('slow with caching')
-// console.log( "Again: " + slow(1, 2) ); // slow(1) result returned from cache
-// console.timeEnd('slow with caching')
 
 // let newUser = {
 
@@ -264,18 +151,6 @@ repeatInterval(1000,10)
 
 //     return x;
 // }
-
-// function newDate(func){
-//     const cache = new Map();
-//     return function(x){
-//         if(cache.has(x)){return cache.get(x)};
-//         let result = func.call(this, x);
-//         cache.set(x, result);
-//         return result;
-//     }
-// };
-
-// console.log(slow(2))
 
 
 
@@ -333,29 +208,126 @@ class Animal {
 // give it some custom properties and/or functions
 // make sure to use 'extends' and 'super'
 
-class Cat extends Animal {
-    constructor(name, legLength) 
-    {
-        super(name)
-        this.legLength = legLength
+// class Cat extends Animal {
+//     constructor(name, legLength) 
+//     {
+//         super(name)
+//         this.legLength = legLength
         
-    }
-    legLengthPrint()
-    {
-        console.log(`${this.name} has really short legs -- ${this.legLength}`)
-    }
-    hide() {
-        console.log(`${this.name} hides!`);
-    }
-    stop()
-    {
-        super.stop();//call parent stop
-        this.hide();// and then hide
-    }
+//     }
+//     legLengthPrint()
+//     {
+//         console.log(`${this.name} has really short legs -- ${this.legLength}`)
+//     }
+//     hide() {
+//         console.log(`${this.name} hides!`);
+//     }
+//     stop()
+//     {
+//         super.stop();//call parent stop
+//         this.hide();// and then hide
+//     }
     
+// }
+// const cat = new Cat ('Crumpet', '5cm')
+// cat.legLengthPrint()
+// cat.run(5)
+// cat.hide()
+// cat.stop()
+
+//write a function checkDate, similar to above, that throws an error if the date is parsed as invalid and implements catch/finally
+
+// function checkDate(date){
+
+//     try{
+//         const testDate = new Date(date);
+//         if(testDate == `Invalid Date`){
+//             throw new SyntaxError(`This is not  valid.`); //we can throw our own custom errors
+//         }
+//         return true;
+//     }
+//     catch(err){
+//         if (err instanceof SyntaxError){ //and then catch them and do specific things bsed on type
+//             console.log(err.message);
+//         }else{
+//             throw err; //rethrow other non-syntax errors
+//         }
+//     }
+//     finally{
+//         console.log(`at the end`)
+//     }
+//     return false;
+// }
+// console.log(checkDate(`this is not a day`)) //Invalid Date
+// console.log(checkDate(`1990-05-06`)) //Invalid Date
+// console.log(checkDate(`1987-04-14`)) //Invalid Date
+
+// // console.log(testDate == 'Invalid Date')
+
+
+function produceSong(resolve, reject) 
+{
+    const artists = ['Taylor Swift', 'Beyonce', 'Drake', 'Ed Sheeran', 'Rihanna', 'The Weeknd', 'Harry Styles']
+    const randomArtist = Math.floor(Math.random() * artists.length) //random number corresponding to one of the above artists
+
+    const songs = ['Unstoppable', 'Numb Little Bug', 'About Damn Time', 'Music For a Sushi Restaurant', 'Anti-Hero', 'Glimpse of Us']
+    const randomSong = Math.floor(Math.random() * songs.length) //random number corresponding to one of the above songs
+
+    const randomOutcome = Math.round(Math.random()) //returns either 0 or 1 randomly for failure (0) or success (1)
+
+    let successResult = artists[randomArtist] + ' has just released their newest song called ' + songs[randomSong]
+    let failResult = artists[randomArtist] + ' has no new songs'
+    
+    setTimeout(() => randomOutcome ? resolve(successResult) : reject(failResult), 1000)
+
+    //a longhand version of the above setTimeout, without arrow functions or conditional statements:
+    //setTimeout(function() {
+    //    if (randomOutcome == 1) resolve(successResult) //calls the resolve callback to indicate successful promise resolution, native to promise producer functions
+    //    else reject(failResult) //calls the reject callback to indicate failed promise resolution, native to promise producer functions
+    //}, 1000)
 }
-const cat = new Cat ('Crumpet', '5cm')
-cat.legLengthPrint()
-cat.run(5)
-cat.hide()
-cat.stop()
+let songPromise = new Promise(produceSong)
+
+songPromise.then(
+    successMsg => console.log(`Success #1: ${successMsg}`),
+    failMsg =>  console.log(`Failure #2: Sorry fans ${failMsg}`)
+)
+
+songPromise.then( //if you only want to do something in case of error there are two options
+    null,
+    failMsg => console.log(`Failure #2: Bear with me ${failMsg}`)
+)
+
+songPromise //this is more common way 
+    .then(successMsg => console.log(`Success #1: ${successMsg}`))
+    .catch(failMsg => console.log(`Failure #2: Patience Patience Patience ${failMsg}`))
+    .finally(() => console.log(` Song will release SOON!`))
+
+    //this are 3 ways of doing it.  See above
+
+    //first run these commands :
+// 1. npm init (to initialise this script with the npm)
+// 2. npm install node-fetch (to install the browser function 'fetch' for node.js)
+// 3. add "type": "module", to package.json
+import fetch from 'node-fetch'
+
+fetch('https://jsonplaceholder.typicode.com/posts/10') //sample public JSON API for use in testing
+    .then(response => response.json()) //this gets the entire HTTP response, so we use the .json() function which also returns a promise
+    .then(json => console.log(`Post #10: ${json.title}`)) //this promise includes the json returned from the fetched URL if successful
+    .catch(error => console.error(`Caught error: ${error}`)) //can optionally include this to show any errors
+    .finally(() => console.log('done fetching')) //can optionally include this after all fetching done
+// try and get both fetch.then and await fetch type syntaxes working
+// create a function similar to fetchPostTitle that grabs the body of a particular post
+
+let post2 = await fetch ('https://jsonplaceholder.typicode.com/posts/2')
+let post2Json = await post2.json()
+console.log(`Post #2: ${JSON.stringify(post2Json)}`)
+
+async function fetchPostTitle(postedId){
+    let post = await fetch(`https://jsonplaceholder.typicode.com/posts/${postedId}`)
+    let posJson = await post.json()
+    return posJson.title
+
+}
+
+let post10Title = await fetchPostTitle(10)

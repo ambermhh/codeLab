@@ -1,5 +1,5 @@
 // Question 1
-/* "" + 1 + 0  //string at the beginning 
+"" + 1 + 0  //string at the beginning 
 "" - 1 + 0  //string at the beginning
 true + false //true is 1, false is 0, 1+0=1
 !true //false ~
@@ -16,39 +16,39 @@ undefined == null //true
 undefined === null //false
 " \t \n" - 2 //
 console.log(" \t \n" - 2)
-*/
+
 
 
 
 // Question 3  
-/* if (0) console.log('#1 zero is true')
+if (0) console.log('#1 zero is true')
 if ("0") console.log('#2 zero is true')
 if (null) console.log('null is true')
 if (-1) console.log('negative is true')
 if (1) console.log('positive is true')
-*/
+
 
 
 //  Question 4
-/* let a = 10, b = 3;
+let a = 10, b = 3;
 let result = `${a} + ${b} is `;
 if (a + b < 10 ? true:false) {
     result += 'less than 10';
 } else {
     result += 'greater than 10';}
     console.log(result)
-    */
+   
 
 
 //  Question 5   
-/* getGreeting =()=> {
+getGreeting =()=> {
     return "Hello " +   "!"
 }
 console.log(getGreeting())
- */
+
 
 // Question 6
-/*     const westley = {
+    const westley = {
     name: 'Westley',
     numFingers: 5
     }
@@ -68,9 +68,9 @@ console.log(getGreeting())
         }
     inigo.greeting(westley)
     inigo.greeting(rugen) 
- */
+
 // Question 7
-/* const basketballGame = {
+const basketballGame = {
     score: 0,
     freeThrow() {
     this.score++;
@@ -92,10 +92,10 @@ console.log(getGreeting())
  
      //modify each of the above object methods to enable function chaining as below:
      basketballGame.basket().freeThrow().freeThrow().basket().threePointer().halfTime();
-     */ 
+     
 
 // Question 8
-    /*     const sydney = {
+        const sydney = {
         name: 'Sydney',
         population: 5_121_000,
         state: 'NSW',
@@ -108,9 +108,9 @@ console.log(getGreeting())
        }
     }
     printSydney(sydney)
-    */
+    
 
-/*     const artist ={
+    const artist ={
         name:`Paul Yore`,
         year_born:1988,
         location:`Australia`,
@@ -122,21 +122,21 @@ console.log(getGreeting())
         }
     }
     printArtist(artist)
- */
+
 // Question 9
-/*     let dog1 = 'Bingo';
+    let dog1 = 'Bingo';
     let dog2 = dog1;
         dog2 = 'mango';
     console.log(dog1, dog2);
- */
 
-/*     let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+
+    let cat1 = { name: 'Fluffy', breed: 'Siberian' };
     let cat2 = cat1;
     cat2.name = 'crumpet';
     console.log(cat1);
- */
+
 //  Question 10
-/*     function Person(name, age) {
+    function Person(name, age) {
         this.name = name;
         this.age = age;
         this.human = true;
@@ -145,9 +145,9 @@ console.log(getGreeting())
         let person1 = new Person('Amber', 18);
         let person2 = new Person('Bella', 5);
         console.log(person1, person2)
- */
 
-/*     class Person{
+
+    class Person{
         constructor(name, age){
             this.name = name;
             this.age = age;
@@ -156,6 +156,6 @@ console.log(getGreeting())
         let person1 = new Person('Mary', 40);
         let person2 = new Person('Jack', 60);
         console.log(person1, person2)
- */
+
 
 

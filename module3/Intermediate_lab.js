@@ -159,12 +159,72 @@ function getBookTitle (bookId){
     return matchBooks ? matchBooks.title : null;   
   
 }
-console.log(getBookTitle(5))
+// console.log(getBookTitle(5))
 
 // 7.b
 function getOldBooks(){
     const oldBooks = books.filter(oldBooks => oldBooks.year <= 1950)
     return oldBooks
 }
-console.log(getOldBooks())
+// console.log(getOldBooks())
 // 7.c
+const addGenreBook = books.map(book => ({
+    ...book,
+    Genre: `Classic`,
+}));
+
+// console.log(addGenreBook);
+
+// 7.d
+
+function getTitles (authorInitial){
+   return books
+    .filter(book => book.author.startsWith(authorInitial))
+    .map(book => book.title);
+}
+const titles = getTitles(`A`);
+// console.log(titles);
+
+//  7.e
+
+function latestBook(){
+ let latest = 0;
+ books.forEach(function(book){
+    if(!latest || book.year > latest.year){
+        latest = book;
+    }
+ });
+ return latest
+}
+
+// console.log(latestBook())
+
+// Question 8
+
+const phoneBookABC = new Map() //an empty map to begin with
+phoneBookABC.set('Annabelle', '0412312343')
+phoneBookABC.set('Barry', '0433221117')
+phoneBookABC.set('Caroline', '0455221182')
+
+// 8.a
+const phoneBookDEF = new Map()
+phoneBookDEF.set(`Drake`, `0451685495`)
+phoneBookDEF.set(`Evan`, `0465198463`)
+phoneBookDEF.set(`Francis`, `0418624895`)
+// 8.b
+const arrDEF = [...phoneBookDEF];
+const arrABC = [...phoneBookABC];
+// 8.c
+arrABC[2][1] = `11111111`;
+// 8.d
+function printPhoneBook(contacts){
+   for(let[name, phoneNumber] of contacts){
+    console.log(`${name}: ${phoneNumber}`)
+   }
+}
+// 8.e
+const wholePhoneBook = arrABC.concat(arrDEF);
+// 8.f
+console.log(wholePhoneBook);
+
+
