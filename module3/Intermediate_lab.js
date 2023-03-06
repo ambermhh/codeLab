@@ -1,21 +1,21 @@
 // Question 1
-/*         function ucFirstLetters (str){
+        function ucFirstLetters (str){
             return str.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');;
         }
         console.log(ucFirstLetters('los angeles') )
     // Los Angeles
- */
+
 
 // Question 2
-    // function truncate(str, maxLength) {
-    //     if (str.length > maxLength) {
-    //       str = str.substring(0, maxLength-3) + '...';
-    //     }
-    //     return str;
-    //   }
+    function truncate(str, maxLength) {
+        if (str.length > maxLength) {
+          str = str.substring(0, maxLength-3) + '...';
+        }
+        return str;
+      }
 
-    // console.log(truncate('This text will be truncated if it is too long', 25))
+    console.log(truncate('This text will be truncated if it is too long', 25))
 // This text will be truncat...
 
 
@@ -227,4 +227,64 @@ const wholePhoneBook = arrABC.concat(arrDEF);
 // 8.f
 console.log(wholePhoneBook);
 
+// Question 9
+let salaries = {
+    "Timothy" : 35000,
+    "David" : 25000,
+    "Mary" : 55000,
+    "Christina" : 75000,
+    "James" : 43000
+    };
+// 9.a
+function sumSalaries(){
+    let total = 0;
+    for (let key in salaries){
+        total += salaries[key];
+    }
+    return total;
+}
 
+console.log(sumSalaries())
+// 9.b
+
+function topEarner(salaries){
+    let maxSalary = -Infinity;
+    let topEarner = '';
+    for (let name in salaries){
+        if (salaries[name] > maxSalary){
+            maxSalary = salaries[name];
+            topEarner = name;
+        }
+    }
+    return topEarner;
+}
+
+console.log(topEarner(salaries))
+
+// Question 10
+const today = new Date();
+console.log('Current time is ' + today.toLocaleTimeString())
+console.log(today.getHours() + ' hours have passed so far today')
+// 10.a
+console.log(today.getMinutes() + ` minutes that have passed so far today`)
+// 10.b
+console.log(today.getSeconds() + ` seconds that have passed so far today`)
+// 10.c
+const birthDate = new Date('1990-04-14');
+
+const ageInMilliseconds = today - birthDate;
+const ageInYears = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365));
+const ageInMonths = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+const ageInDays = Math.floor((ageInMilliseconds % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+console.log(`I am ${ageInYears} years, ${ageInMonths} months and ${ageInDays} days old`);
+//10.d
+function daysInBetween (date1, date2){
+    let d1 = new Date(date1);
+    let d2 = new Date(date2);
+    let diff = d2.getTime() - d1.getTime();
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    return days;
+}
+let days = daysInBetween(`1990-04-14`, `1995-06-23`);
+console.log(days);
