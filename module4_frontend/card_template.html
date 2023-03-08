@@ -11,22 +11,29 @@
             background-color: #e3f2fd;
             }
             .card {
-            padding: 10px;
+            padding: 20px;
+            border-style: solid;
+            border-width: 2px;
+
             }
             .card-title {
             font-weight: 600;
             font-size: 3em;
             padding: 0 0 10px 0;
-            }
-            .card-description {
+            border-width: 2px;
+            }            
+            .card-text {
             font-weight: 400;
-            font-size: 2em
+            font-size: 2em;
+            }
+            .card img {
+                display: block;
+                margin: auto;
             }
             #card-list{
-            display: flex;
-            border-radius: 30px;                
+            display: flex;                  
             }
-    </style>
+            </style>
 </head>
 <body>
     <template id = "card-template">
@@ -36,25 +43,71 @@
                 <div class="card-text"></div>
             </div>
     </div>
-    </template>
+        </template>
+        <template id = "artist-template">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-name"></div>
+                    <div class="card-portfolio"></div>
+                </div>
+        </div>
+            </template>
+            <template id = "portfolio-item">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-name"></div>
+                        <img width="250" class="card-image"/>
+                    </div>
+            </div>
+                </template>
     <div id="card-list"></div>
+    <div id = 'artist-name'></div>
 </body>
 <script>
+let dataName = 0;
+const data = [{name: 'bob', age: 23}, {name: 'Amber', age: 5}, {name: 'John', age: 2},{name: 'alice', age: 39}];
 function addCard(title, content) {
-
 const template = document.getElementById("card-template").content.cloneNode(true);
-const data = [{name: 'bob', age: 23}, {name: 'alice', age: 39}];
-
+ 
 template.querySelector('.card-title').innerText = title;
 template.querySelector('.card-text').innerText = content;
 document.querySelector('#card-list').appendChild(template);
 }
+data.forEach(person =>addCard(person.name, person.age))
 // if ('content' in document.createElement('template')) {
-addCard('Card#1', 'first card');
-addCard('Card#2', 'second card');
-addCard('Card#3', 'third card');
-addCard('Card#4', 'fourth card');
+
+
+// addCard(data.name, data.age);
 // }
+const artist={
+    name:"Van Gogh",
+    portfolio:[
+    {title:"portrait",
+    url:"https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
+    
+    {title:"sky",
+    url:"https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg"},
+    ]
+    }
+function addArtistCard(name, portfolio){
+    const template = document.getElementById("artist-template").content.cloneNode(true);
+    template.querySelector(".card-name").innerText = name;
+    portfolio.forEach(artwork => {
+        const portfolio_template = document.getElementById("portfolio-item").content.cloneNode(true);
+        portfolio_template.querySelector('.card-name').innerText = artwork.title
+        portfolio_template.querySelector('.card-image').src = artwork.url
+        template.querySelector('.card-portfolio').appendChild(portfolio_template);
+
+    });
+    document.querySelector('#artist-name').appendChild(template);
+}
+// if('content' in document.createElement('template')){
+//     artis.forEach(artists => addArtistCard(artist.name, artist.title, artist.img_url)
+        
+//     );}
+
+addArtistCard(artist.name, artist.portfolio);
+
 
 </script>
 </html>
