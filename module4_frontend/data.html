@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            }
+            .card {
+            padding: 20px;
+            border-style: solid;
+            border-width: 2px;
+
+            }
+            .card-title {
+            font-weight: 600;
+            font-size: 3em;
+            padding: 0 0 10px 0;
+            border-width: 2px;
+            }            
+            .card-description {
+            font-weight: 400;
+            font-size: 2em;
+            }
+            </style>
+</head>
+<body>
+    <template id = 'car-card-template'>
+        <div class="'card">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-description"></p>
+    </div>
+</div>
+</template>
+</div>
+    <script>
+    const carData = [
+        {title: 'Audi', description: 'Audi AG is a German automotive manufacturer of luxury vehicles headquartered in Ingolstadt, Bavaria, Germany.'},
+        {title: 'Mercedes-Benz', description: 'Mercedes-Benz, commonly referred to as Mercedes, is a German luxury automotive brand.'},
+        {title: 'BMW', description: 'Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational corporate manufacturer of luxury vehicles and motorcycles headquartered in Munich, Bavaria, Germany.'}];
+        
+        function getCars() {
+            return carData;}
+        function addCards(title, description) {
+            getCars().forEach((car) => {
+                const template = document.getElementById("car-card-template").content.cloneNode(true);
+                template.querySelector('.card-title').innerText = car.title;
+                template.querySelector('.card-description').innerText = car.description;
+                document.querySelector('#car-list').appendChild(template);
+            });
+        }
+        if ('content' in document.createElement('template')) {
+            addCards(carData.title, carData.description);
+        }
+</script>
+</body>
+</html>

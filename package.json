@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ambermhh/codeLab#readme",
   "dependencies": {
+    "echarts": "^5.4.1",
     "sentiment": "^5.0.2"
   }
 }

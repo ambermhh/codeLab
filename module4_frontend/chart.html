@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Module 4</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          </div>
+        </div>
+      </nav>
+
+    <!-- placeholder divs for the generated charts -->
+    <div id="clothingChart" style="width: 600px;height:400px;"></div>
+    <div id="foodChart" style="width: 800px;height:400px;"></div>
+    <div id="productsChart" style="width:800px;height:600px;"></div>
+
+    <!-- see the Getting Started section of the echarts site for templates and instructions:
+        https://echarts.apache.org/handbook/en/how-to/chart-types/bar/basic-bar
+        https://echarts.apache.org/handbook/en/how-to/chart-types/line/basic-line
+        https://echarts.apache.org/handbook/en/how-to/chart-types/pie/basic-pie
+    -->
+
+    <script type="text/javascript">
+        // Initialize the echarts instance based on the prepared dom
+        const clothingChart = echarts.init(document.getElementById('clothingChart'));
+
+        // Specify the configuration items and data for the chart
+        let clothingOptions = {
+            title: {
+                text: 'ECharts Clothing Sales Example'
+            },
+            tooltip: {},
+            legend: {
+                data: ['sales'], //matches to the series name
+                right: 0
+            },
+            xAxis: {
+                data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks'] //these strings correspond to matching numbers in the series data
+            },
+            yAxis: {}, //will be numeric depending on xaxis data
+            series: [
+                {
+                    name: 'sales',
+                    type: 'line',
+                    data: [5, 20, 36, 10, 10, 20] //these match to the xaxis data strings
+                }
+            ]
+        };
+
+        // Display the chart using the configuration items and data just specified.
+        clothingChart.setOption(clothingOptions);
+        const foodChart = echarts.init(document.getElementById('foodChart'));
+
+        let foodOptions = {
+            title: {
+                text: 'ECharts Food Example'
+            },            
+            legend: {
+                // Try 'horizontal'
+                //try changing the position of the legend
+                orient: 'vertical',
+                right: 10,
+                top: 'center'
+            },
+            dataset: {
+                source: [
+                    //try to add in some data for 2018 and 2019
+                    //try to add in another product with made-up data
+                    ['product', '2015', '2016', '2017', '2018'],
+                    ['Matcha Latte', 43.3, 85.8, 93.7, 75.2],
+                    ['Milk Tea', 83.1, 73.4, 55.1, 84.2],
+                    ['Cheese Cocoa', 86.4, 65.2, 82.5, 12.4],
+                    ['Walnut Brownie', 72.4, 53.9, 39.1, 64.1]
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }, { type: 'bar' }],
+            // custom color palette https://echarts.apache.org/handbook/en/concepts/style#color-palette
+            color: [
+                '#dd6b66',
+                '#759aa0',
+                '#e69d87',
+                '#8dc1a9',
+                '#ea7e53',
+                '#eedd78',
+                '#73a373',
+                '#73b9bc',
+                '#7289ab',
+                '#91ca8c',
+                '#f49f42'
+            ]
+        };      
+        // Display the chart using the configuration items and data just specified.
+        foodChart.setOption(foodOptions);
+
+
+       
+    </script>    
+    <script src="./js/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>
