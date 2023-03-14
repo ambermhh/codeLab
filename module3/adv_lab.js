@@ -1,5 +1,6 @@
-// Question 1 
-// 1.a & 1.b 
+// Question 1
+
+// 1.a & 1.b
 // function makeCounter(startFrom) {
 //     let currentCount = startFrom;
 //     return function() {
@@ -8,12 +9,12 @@
 //     return currentCount;
 //     };
 //     }
-    // let counter1 = makeCounter(100);
-    // counter1(); // 1
-    // counter1(); // 2
-    // let counter2 = makeCounter(5);
-    // counter2();
-    // counter2();
+// let counter1 = makeCounter(100);
+// counter1(); // 1
+// counter1(); // 2
+// let counter2 = makeCounter(5);
+// counter2();
+// counter2();
 // 1.c
 // function makeCounter(startFrom, incrementBy) {
 //     let currentCount = startFrom;
@@ -39,7 +40,7 @@
 // setTimeout(delayMsg, 0, '#3: Delayed by 0ms');
 // delayMsg('#4: Not delayed at all')
 // // 2.a
-// //4 => 3 => 2 => 1 set the time to delay printing 
+// //4 => 3 => 2 => 1 set the time to delay printing
 // // 2.b
 // let delayMsga = msg => console.log(`This message will be printed after a delay: ${msg}`)
 // // 2.c
@@ -120,23 +121,44 @@
 //         if(count >= limit){
 //             clearInterval(timeInterval);
 //         }
-        
+
 //     },1000);
 // }
 // printFibonacci(5);
 // Question 5
 let car = {
-    make: "Porsche",
-    model: '911',
-    year: 1964,
-    description() {
-        console.log(`This car is a ${this.make} ${this.model} from ${this.year}`);
-}
+  make: "Porsche",
+  model: "911",
+  year: 1964,
+  description() {
+    console.log(`This car is a ${this.make} ${this.model} from ${this.year}`);
+  },
 };
-// car.description(); //works
+car.description(); //works
 // // 5.a
-// setTimeout(() => car.description(), 200); //fails
+setTimeout(() => car.description(), 1000); //fails
 // 5.b
-let newCar = {...car, year:1995};
-console.log(newCar);
+car = { ...car, year: 1995 };
+// console.log(newCar);
+// 5.c
+// because of the setTimeout
+// 5.d
+let desCar = car.description.bind(car);
+// 5.e
+setTimeout(desCar, 1500);
+car = { ...car, year: 2023 };
 
+// Question6
+
+function multiply(a, b) {
+  console.log(a * b);
+}
+// multiply.delay(500)(5, 5); // prints 25 after 500 milliseconds
+// 6.a
+Function.prototype.delay = function(ms){
+    let orginalFunction = this;
+    return function(arg1, arg2){
+        setTimeout(orginalFunction, ms, arg1, arg2);
+    }
+}
+multiply.delay(500)(10,10)
