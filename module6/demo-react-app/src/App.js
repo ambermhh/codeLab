@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
-import MyComponent from "./MyComponent";
-import PropsDisplayer from "./PropsDisplayer";
-import Comment from "./Comment";
-import Greeting from "./Greeting";
+import MyComponent from "./components/MyComponent";
+import PropsDisplayer from "./components/PropsDisplayer";
+import Comment from "./components/Comment";
+import Greeting from "./components/Greeting";
+import Example from "./components/Example";
 
 function formatName(name) {
   return name.first + " " + name.last;
@@ -41,7 +42,9 @@ function App() {
       <PropsDisplayer name="Amber" location="Syd" number={444} />
       <Comment user={comment.author} date={comment.date} text={comment.text} />
       <Greeting />
+      <Example/>
     </div>
   );
 }
 export default App;
+
