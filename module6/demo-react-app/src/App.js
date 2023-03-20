@@ -8,7 +8,9 @@ import Example from "./components/Example";
 import Weather from "./components/Weather";
 import HookExample from "./components/HookExample";
 import HookWeather from "./components/HookWeather";
-import ClockDisplay from "./components/ClockDisplay";
+import ClockDisplay from "./components/Clock";
+import HookClockDisplay from "./components/HookClock";
+
 
 function formatName(name) {
   return name.first + " " + name.last;
@@ -45,12 +47,14 @@ function App() {
       <MyComponent />
       <PropsDisplayer name="Amber" location="Syd" number={444} />
       <Comment user={comment.author} date={comment.date} text={comment.text} />
-      <Greeting />
+      <Greeting  name="dum dum"/>
       <Example/>
       <Weather/>
       <HookExample/>
       <HookWeather/>
       <ClockDisplay/>
+      <HookClockDisplay/>
+ 
       
     </div>
   );
