@@ -20,7 +20,7 @@ class Example extends React.Component {
 
   render() {
     return <div class="componentBox">
-        <h2>Example</h2>
+        <h2>State Example</h2>
         <p>Hungry? {String(this.state.hungry)}</p>
         <button onClick={() => this.getsHungry()}>Getting Hungry...</button> 
         </div>;

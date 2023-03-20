@@ -5,6 +5,10 @@ import PropsDisplayer from "./components/PropsDisplayer";
 import Comment from "./components/Comment";
 import Greeting from "./components/Greeting";
 import Example from "./components/Example";
+import Weather from "./components/Weather";
+import HookExample from "./components/HookExample";
+import HookWeather from "./components/HookWeather";
+import ClockDisplay from "./components/ClockDisplay";
 
 function formatName(name) {
   return name.first + " " + name.last;
@@ -43,6 +47,11 @@ function App() {
       <Comment user={comment.author} date={comment.date} text={comment.text} />
       <Greeting />
       <Example/>
+      <Weather/>
+      <HookExample/>
+      <HookWeather/>
+      <ClockDisplay/>
+      
     </div>
   );
 }
