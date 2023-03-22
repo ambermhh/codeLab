@@ -1,4 +1,5 @@
 import React from 'react'
+import FancyBorder from './FancyBorder';
 
 // State can be modified based on user action or network changes
 // Every time the state of an object changes, React re-renders the component to the browser
@@ -55,7 +56,7 @@ class Weather extends React.Component {
 
     render() {
         return (
-            <div className="Weather componentBox">
+            <FancyBorder  color="blue" Weather componentBox >
                 <div>Weather Today: {this.state.weather}. Temp is {this.state.temperature}&deg;C</div>
                 <div>Weather Tomorrow: {this.state.forecast}</div>
                 {/* <Forecast weather={this.state.forecast} /> */}
@@ -64,7 +65,7 @@ class Weather extends React.Component {
                 <button onClick={this.windBlows}>Stay Home</button> {/* we can use event listeners like onClick, onSubmit, onChange but they need to be camelcased */}
                 <button onClick={() => this.sunShines()}>Beach Day</button>
                 <button onClick={() => this.changeWeather()}>Change Weather</button>
-            </div>
+            </FancyBorder>
 
         )
     }

@@ -10,6 +10,14 @@ import HookExample from "./components/HookExample";
 import HookWeather from "./components/HookWeather";
 import ClockDisplay from "./components/Clock";
 import HookClockDisplay from "./components/HookClock";
+import Login from "./components/Login";
+import HookLogin from "./components/HookLogin";
+import Reservation from "./components/Reservation";
+import StudentList from "./components/StudentList";
+import SignUpDialog from "./components/SignupDialog";
+import NewBackground from "./components/NewBackground";
+import Breweries from "./components/Breweries";
+import RickNMorty from "./components/RickNMorty";
 
 
 function formatName(name) {
@@ -53,7 +61,22 @@ function App() {
       <HookExample/>
       <HookWeather/>
       <ClockDisplay/>
+
+      <NewBackground>
       <HookClockDisplay/>
+      </NewBackground>
+      
+      
+      <Login/>
+      <HookLogin/>
+      <Reservation/>
+      <StudentList/>
+      <SignUpDialog/>
+      <Breweries/>
+
+      <RickNMorty/>
+ 
+     
  
       
     </div>
