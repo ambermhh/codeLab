@@ -55,6 +55,9 @@
   background-size:cover; border-style: dashed;border-color: pink;border-radius: 3em;}
 
 
+  .emoji{font-size: 100px;}
+  .emoji-button{background-color: #ca485c;font-size: 20px;font-weight: bold;border-radius: 5px;width: 10em;}
+
   .ricknmorty{
     display: flex;
     justify-content: center;

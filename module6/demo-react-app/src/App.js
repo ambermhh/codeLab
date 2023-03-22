@@ -18,7 +18,7 @@ import SignUpDialog from "./components/SignupDialog";
 import NewBackground from "./components/NewBackground";
 import Breweries from "./components/Breweries";
 import RickNMorty from "./components/RickNMorty";
-
+import Emoji from "./components/Emoji";
 
 function formatName(name) {
   return name.first + " " + name.last;
@@ -55,32 +55,26 @@ function App() {
       <MyComponent />
       <PropsDisplayer name="Amber" location="Syd" number={444} />
       <Comment user={comment.author} date={comment.date} text={comment.text} />
-      <Greeting  name="dum dum"/>
-      <Example/>
-      <Weather/>
-      <HookExample/>
-      <HookWeather/>
-      <ClockDisplay/>
+      <Greeting name="dum dum" />
+      <Example />
+      <Weather />
+      <HookExample />
+      <HookWeather />
+      <ClockDisplay />
 
       <NewBackground>
-      <HookClockDisplay/>
+        <HookClockDisplay />
       </NewBackground>
-      
-      
-      <Login/>
-      <HookLogin/>
-      <Reservation/>
-      <StudentList/>
-      <SignUpDialog/>
-      <Breweries/>
 
-      <RickNMorty/>
- 
-     
- 
-      
+      <Login />
+      <HookLogin />
+      <Reservation />
+      <StudentList />
+      <SignUpDialog />
+      <Breweries />
+      <Emoji />
+      <RickNMorty />
     </div>
   );
 }
 export default App;
-
