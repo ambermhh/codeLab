@@ -49,12 +49,18 @@ function HookClockDisplay() {
         setShowClock(false)
     }
 
+    const showClockButton = () => {
+        setShowClock(true)
+    }
+
     //make a generic toggleClock function that will hide or show based on the current state
 
     return (
         <div className="HookClockDisplay componentBox">
             {showClock ? <HookClock /> : null}
             <button onClick={hideClock}>Hide HookClock</button>
+            <button onClick={showClockButton}>Show HookClock</button>
+
         </div>
     )    
 }

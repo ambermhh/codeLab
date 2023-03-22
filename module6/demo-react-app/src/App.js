@@ -19,6 +19,7 @@ import NewBackground from "./components/NewBackground";
 import Breweries from "./components/Breweries";
 import RickNMorty from "./components/RickNMorty";
 import Emoji from "./components/Emoji";
+import Calculator from "./components/Calculator";
 
 function formatName(name) {
   return name.first + " " + name.last;
@@ -74,6 +75,7 @@ function App() {
       <Breweries />
       <Emoji />
       <RickNMorty />
+      <Calculator/>
     </div>
   );
 }

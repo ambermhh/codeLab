@@ -65,6 +65,10 @@ class ClockDisplay extends React.Component {
         this.setState({showClock: false})
     }
 
+    showClockButton = () => {
+        this.setState({showClock: true})
+    }
+
     //make a generic toggleClock function that will hide or show based on the current state
 
     render() {
@@ -73,6 +77,8 @@ class ClockDisplay extends React.Component {
             <div className="ClockDisplay componentBox">
                 {this.state.showClock ? <Clock /> : null}
                 <button onClick={this.hideClock}>Hide Clock</button>
+                <button onClick={this.showClockButton}>Show Clock</button>
+
             </div>
         )
     }

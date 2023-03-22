@@ -3,15 +3,15 @@ import React from "react";
 function EmojiButton() {
   const [emoji, setEmoji] = React.useState("🤨");
 
-  function toggleEmoji() {
+  const toggleEmoji = () => {
     if (emoji === "🤨") {
-      setEmoji("😮‍💨🫰");
+      setEmoji("🥰🫰");
     } 
-    else if (emoji === "😮‍💨🫰"){
+    else if (emoji === "🥰🫰"){
         setEmoji("🫣")
     }
     else if(emoji === "🫣"){
-      setEmoji("👋")
+      setEmoji("🕺")
     }
     else {
         setEmoji("🤨")
@@ -23,7 +23,7 @@ function EmojiButton() {
       <p className="emoji">{emoji}</p>
 
       <button className="emoji-button" onClick={toggleEmoji}>
-        Try
+        Try Me
       </button>
     </div>
   );
