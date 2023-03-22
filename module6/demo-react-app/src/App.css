@@ -37,3 +37,48 @@
   }
 }
 .componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
+
+.hideBullets{
+  list-style: none;
+}
+
+.StudentList ul { display: flex; flex-wrap: wrap; }
+.Student { display: flex; align-items: center; box-shadow: 0 0 10px 0 rgba(0,0,0,0.1); margin: 1em; background: rgba(255,255,255,0.8); width: 30%; }
+.Student .details { padding-left: 0.5em; }
+
+.FancyBorder { --mask: linear-gradient(#000 0 0) 50%/calc(80% - 37.00px) calc(100% - 37.00px) no-repeat,
+  radial-gradient(farthest-side,#000 80%,#0000) 0 0/2em 2em round; mask: var(--mask); padding: 2em; 
+  background: linear-gradient(135deg, #820f33, #e99fed, #efa263, #f6519390, #ca485c, #ffb56b) fixed; color: white; }
+.FancyBorder-blue { background: linear-gradient(135deg, #d1ff65, #cdf77e, #be8d88ba, #7eb967, #97ef7c, #f29b83) fixed; }
+
+.newBackground {padding: 10px; background-image: url(https://i.pinimg.com/736x/6b/09/c0/6b09c0310557c99e01733009b75af76c.jpg);
+  background-size:cover; border-style: dashed;border-color: pink;border-radius: 3em;}
+
+
+  .ricknmorty{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 20px;
+    padding: 0;
+    font-family: "Kanit", sans-serif;
+    color: rgb(60, 38, 9);
+    font-weight: bold;
+  }
+
+  .card{
+    width: 20rem;
+    
+  }
+  .card-text {
+    color: rgb(29, 18, 3);
+  }
+
+  .buttom{
+    display: inline-block;
+  }
+
+  .ricklist{
+    list-style-type: none;
+  }
