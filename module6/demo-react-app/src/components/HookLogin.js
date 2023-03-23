@@ -17,7 +17,7 @@ function HookLogin() {
 
     setLoggedIn(isLoggedIn);
 
-  if (isLoggedIn){
+  if (!isLoggedIn){
     let newAttempt = attempts + 1
 
     if(newAttempt === 5){
