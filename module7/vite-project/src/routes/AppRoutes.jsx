@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import App from "../App"
 import Calculator from "../components/Calculator"
 import Login from "../components/Login"
+import Theme from "../components/Theme"
 import About from "../pages/About"
 import Dashboard, {DashboardMessages, DashboardTasks} from "../pages/Dashboard"
 import PageNotFound from "../pages/PageNotFound"
@@ -32,7 +33,9 @@ function AppRoutes(props) {
 
             <Route path='/login' element={<Login {...props} />} />
 
-
+            <Route path="/theme" element={<Theme/>}/>
+            
+          
             
 
             {/* <Route path='/students' element={<Students {...props} />}>

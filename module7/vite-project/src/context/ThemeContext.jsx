@@ -3,12 +3,12 @@ import React from "react";
 //theme options with specific colour values
 export const themes = {
     light: {
-        foreground: "#333333",
-        background: "#BAE2FF"
+        foreground: "#094a2e",
+        background: "#f0f8ff"
     },
     dark: {
-        foreground: "#ffffff",
-        background: "#222222"
+        foreground: "#f0f8ff",
+        background: "#094a2e"
     }
 };
 

@@ -6,6 +6,8 @@ body{
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-weight: bold;
+  font-size: 18px;
  
 }
 
@@ -16,23 +18,31 @@ body{
   }
 }
 
-.componentBox { width:75em;border: 5px solid #ffffff; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
+.componentBox { width:65em;border: 5px solid #ffffff; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
 
 .NavBar { background: #d2f2e4; color: #dbdbdb; }
 .NavBar ul { display: flex; list-style: none; justify-content: center; }
-.NavBar ul li a { padding: 1em; color: #06220f; text-transform: uppercase; display: inline-block; text-decoration: none;font-weight: bold; }
+.NavBar ul li a { padding: 1em; color: #06220f; text-transform: uppercase; display: inline-block; text-decoration: none;font-weight: bold; font-size: 23px;}
 .NavBar ul li a.active { font-weight: bold; }
 
 .About{color: rgb(52, 92, 131);}
 
 .emoji{font-size: 80px;}
+.emoji-button{background-color:#e67d57;font-size: 20px;font-weight: bold;}
 
+.Dashboard button{background-color: #e67d57;}
+.WindowResizer button{background-color: #e67d57;}
+.Counter button{background-color: #e67d57;}
+.HookClockDisplay button{background-color: #e67d57;}
+.Login button{background-color: #e67d57;}
+.OnlineChat button {background-color: #e67d57;}
 
 .calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  
 }
 
 input[type="text"] {
@@ -51,9 +61,10 @@ input[type="text"] {
 }
 
 .calculator button {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  text-align: center;
   background-color: #eee;
   border: none;
   border-radius: 5px;
@@ -61,9 +72,9 @@ input[type="text"] {
   transition: all 0.2s;
 }
 
-.span-two .calculator-buttons{
-  grid-column: span 4;
+.span-two {
   text-align: center;
+
 }
 
 .calculator button:hover {
@@ -77,3 +88,7 @@ input[type="text"] {
 .footer{
   font-size: -10px;
 }
+
+.theme{font-size: 25px;color: #06220f;padding: 20px;}
+.theme-dark-button{background-color: #094a2e; color: aliceblue;}
+.theme-light-button{background-color: #f0f8ff;color: #094a2e;}

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import { ThemeContext, themes } from '../context/ThemeContext'
 
 export default function Calculator() {
   const [result, setResult] = React.useState("")
- 
+  const themeContext = useContext(ThemeContext)
+
 const handleClick = (e) =>{
     setResult(result + e.target.value)
 }
@@ -73,7 +75,7 @@ const calculate = () => {
 
 
       return (
-        <div className="calculator componentBox">
+        <div className="calculator componentBox" style={{backgroundColor: themeContext.theme.background, color: themeContext.theme.foreground}}>
           <input type="text" value={result}/>
           <div className="calculator-buttons">
             <button value="1" onClick={handleClick}>1</button>

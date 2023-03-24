@@ -1,9 +1,13 @@
 import { useState, useEffect, useRef, useContext } from "react"
 import FormattedDate from "./FormattedDate"
 import { EmojiContext } from "../context/EmojiContext"
+import { ThemeContext, themes } from '../context/ThemeContext'
+
+
 function HookClock() {
     const [date, setDate] = useState(new Date())
     const [tickCount, setTickCount] = useState(0)
+
     let timerId = useRef() //will revisit later on - like storing a class property
 
     //replaces didmount and willunmount in one hook
@@ -31,7 +35,7 @@ function HookClock() {
 
     console.log('hookclock render')
     return (
-        <div className="HookClock">
+        <div className="HookClock" >
             <h3>Hello, world! {tickCount} seconds have elapsed</h3>
             <FormattedDate date={date} />
         </div>
@@ -42,6 +46,8 @@ function HookClockDisplay() {
 
     const [showClock, setShowClock] = useState(true);
     const emojiContext = useContext(EmojiContext)
+    const themeContext = useContext(ThemeContext)
+
 
     const hideClock = () => {
         setShowClock(false)
@@ -54,7 +60,7 @@ function HookClockDisplay() {
     //make a generic toggleClock function that will hide or show based on the current state
 
     return (
-        <div className="HookClockDisplay componentBox">
+        <div className="HookClockDisplay componentBox" style={{backgroundColor: themeContext.theme.background, color: themeContext.theme.foreground}}>
             {showClock ? <HookClock /> : null}
             <button onClick={hideClock}>Hide HookClock</button>
             <button onClick={showClockButton}>Show HookClock</button>

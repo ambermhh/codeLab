@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
 import { useFormInput } from "../hooks/useFormInput";
+import { ThemeContext, themes } from '../context/ThemeContext'
 
 
 function Login() {
@@ -12,6 +13,7 @@ function Login() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState("");
   const [attempts, setAttempts] = useState(0);
+  const themeContext = useContext(ThemeContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -39,7 +41,7 @@ function Login() {
   };
 
   return (
-    <div className="Login componentBox">
+    <div className="Login componentBox" style={{backgroundColor: themeContext.theme.background, color: themeContext.theme.foreground}}>
       {/* if we're logged in, use the Hello component to say hello */}
       <div>{loggedIn ? "Hello" + usernameProps.value : "Please log in"}</div>
       {!loggedIn && attempts < 5 && (
