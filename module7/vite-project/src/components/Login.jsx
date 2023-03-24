@@ -1,10 +1,13 @@
 import React, {useState} from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/userContext";
 import { useFormInput } from "../hooks/useFormInput";
 
 
 function Login() {
   const usernameProps = useFormInput("");
   const passwordProps = useFormInput("");
+  const {users, setUsers} =useContext(UserContext)
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState("");
@@ -31,6 +34,7 @@ function Login() {
         setError(`Invalid username or password`);
       }
       setAttempts(newAttempt)
+      setUsers(users)
     }
   };
 

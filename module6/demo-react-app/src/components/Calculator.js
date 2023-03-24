@@ -1,38 +1,35 @@
 import React from "react";
 
 function Calculator() {
-  const [input, setInput] = React.useState("");
-  const [result, setResult] = React.useState("");
+  const [firstNum, setFirstNum] = React.useState("");
+  const [secondNum, setSecondNum] = React.useState("");
+  const [result, setResult] = React.useState("")
+  const [operation, setOperation] = React.useState('');
+ 
 
-  const handleInput = (event) => {
-    setInput(input + event.target.value);
-  };
-
-  const handleClear = () => {
-    setInput("");
-    setResult("");
-  };
 
   const handleCalculate = () => {
-    let newResult = parseFloat(result);
-    let operation = "";
-
+    let first = parseFloat(firstNum)
+    let second = parseFloat(secondNum)
+    let endResult;
+  
     switch (operation) {
       case "+":
-        newResult = input + input;
+        endResult = first + second
         break;
       case "-":
-        newResult = input - input;
+        endResult = first - second
         break;
       case "*":
-        newResult = input * input;
+        endResult = first * second
         break;
       case "÷":
-        newResult = input / input;
+        endResult = first / second
         break;
       default:
         break;
     }
+    setResult(endResult)
   };
 
   return (

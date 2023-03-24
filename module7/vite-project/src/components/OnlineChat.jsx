@@ -23,6 +23,7 @@ function OnlineChat() {
                 <button onClick={() => ChatAPI.startAPI()}>Start Chat API</button>
                 <button onClick={() => ChatAPI.stopAPI()}>Stop Chat API</button>
             </div>
+            
         </div>
     )
 }
