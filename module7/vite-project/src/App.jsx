@@ -8,12 +8,21 @@ import HookClockDisplay from "./components/HookClock";
 import EmojiButton from "./components/EmojiButton";
 import Calculator from "./components/Calculator";
 import { EmojiProvider } from "./context/EmojiContext";
+import AppRoutes from "./routes/AppRoutes";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+
 
 function App() {
   return (
     <div className="App">
     <EmojiProvider>
       <ThemeProvider>
+        <NavBar/>
+        <AppRoutes/>
+
+
         <WindowResizer />
 
         <Counter />
@@ -27,6 +36,9 @@ function App() {
         <EmojiButton/>
 
         <Calculator/>
+
+        <Footer/>
+
         
       </ThemeProvider>
       </EmojiProvider>
