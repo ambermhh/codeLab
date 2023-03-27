@@ -1,14 +1,15 @@
 import { Routes, Route } from "react-router-dom"
 import App from "../App"
-import Calculator from "../components/Calculator"
 import Login from "../components/Login"
 import Theme from "../components/Theme"
 import About from "../pages/About"
 import Dashboard, {DashboardMessages, DashboardTasks} from "../pages/Dashboard"
 import PageNotFound from "../pages/PageNotFound"
 import Posts, { PostsMessages } from "../pages/Posts"
-
-
+import StudentDetails from "../components/StudentDetails"
+import StudentList from "../components/StudentList"
+import Students from "../pages/Students"
+import SignInTemplate from "../components/SignInTemplate"
 //special component containing all the possible routes for this app
 //any props passed into AppRoutes will also be passed onto child components using {...props}
 function AppRoutes(props) {
@@ -35,14 +36,13 @@ function AppRoutes(props) {
 
             <Route path="/theme" element={<Theme/>}/>
             
-          
+          <Route path="/signin" element={<SignInTemplate {...props} />}/>
             
 
-            {/* <Route path='/students' element={<Students {...props} />}>
+            <Route path='/students' element={<Students {...props} />}>
                 <Route index element={<StudentList />} />
                 <Route path=":studentid" element={<StudentDetails />}/>
-            </Route>             */}
-
+            </Route>  
             {/* special route to handle if none of the above match */}
             <Route path="*" element={<PageNotFound />} />            
         </Routes>

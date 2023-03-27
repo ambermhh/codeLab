@@ -1,5 +1,7 @@
 import React from 'react';
 import Student from './Student';
+import StudentCard from './StudentCard';
+import { Grid } from '@mui/material';
 
 //an array of objects (could come from an API or DB). to render each one in turn, we need to iterate over them,
 //and apply the same transformation process to each one to turn the raw data into JSX.
@@ -60,7 +62,9 @@ function StudentList() {
 
     //we can either create a variable storing all the list items and render it, OR we can move this students.map down into the return directly
     const studentList = currentStudents.map((student, index) => /* in a pinch you can use the array index as the key but it's not recommended */
-        <Student key={student.id} id={student.id} name={student.name} location={student.location} set="set4"/>
+        <Grid item xs={4}>
+        <StudentCard key={student.id} id={student.id} name={student.name} location={student.location} set="set4"/>
+        </Grid>
         //<Student key={student.id} student={student}/> //we could also pass the whole student object as a single prop and do props.student.name
         //<Student key={student.id} {...student}/> //or we can destructure the student object and unpack it into individual props like this
     )
@@ -68,9 +72,9 @@ function StudentList() {
     return (
         <div className="StudentList componentBox">
             <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
-            <ul className="hideBullets">
+            <Grid container spacing={2}>
                 {studentList}
-            </ul>
+            </Grid>
             {/* since reverse modifies the original array and we shouldn't mutate state directly, we clone it first */}
             <button onClick={() => setCurrentStudents([...currentStudents].reverse())}>Reverse Order</button>
 
