@@ -9,7 +9,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 export function SimpleDialog(props) {
     const { onClose, open } = props;
 
-
     return (
         <Dialog onClose={onClose} open={open}>
             <DialogTitle>{props.title}</DialogTitle>
@@ -22,5 +21,27 @@ export function SimpleDialog(props) {
                 <Button onClick={onClose} autoFocus>Close</Button>
             </DialogActions>            
         </Dialog>
+    );
+}
+//try to use this kind of dialog for the buttons on the StudentCard component to pop up a dialog with each student details when clicked
+
+export default function SimpleDialogDemo() {
+
+    const [open, setOpen] = React.useState(false);
+
+    return (
+        <div>
+
+            <Button variant="outlined" onClick={() => setOpen(true)}>
+                Open simple dialog
+            </Button>
+
+            <SimpleDialog
+                open={open}
+                onClose={() => setOpen(false)}
+                title="My Simple Dialog"
+                content="Message text shows here to inform the user what their options are"
+                />
+        </div>
     );
 }

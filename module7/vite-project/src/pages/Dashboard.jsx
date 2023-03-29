@@ -13,7 +13,7 @@ function Dashboard() {
             <Outlet />            
             <button onClick={() => navigate('tasks')}>Show Tasks</button>
             <button onClick={() => navigate('messages')}>Show Messages</button>
-
+           
         </div>
     )
 }
@@ -56,6 +56,8 @@ export function DashboardTasks(props) {
                     <li key={task.id}>{task.name}</li>
                 ))}
             </ul>
+
+        
         </div>
     )
 }

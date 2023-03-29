@@ -1,76 +1,72 @@
-import React, { useState } from "react";
-import { useContext } from "react";
-import { UserContext } from "../context/userContext";
-import { useFormInput } from "../hooks/useFormInput";
-import { ThemeContext, themes } from "../context/ThemeContext";
+import React, {useContext} from 'react';
+import { UserContext } from '../context/UserContext';
+import useFormInput from '../hooks/useFormInput';
 
 function Login() {
-  const usernameProps = useFormInput("");
-  const passwordProps = useFormInput("");
-  const { users, setUsers } = useContext(UserContext);
 
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [error, setError] = useState("");
-  const [attempts, setAttempts] = useState(0);
-  const themeContext = useContext(ThemeContext);
+    const usernameProps = useFormInput('')
+    const passwordProps = useFormInput('')
+    const {username, setUsername} = useContext(UserContext)
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    let username = usernameProps.value;
-    let password = passwordProps.value;
+    const [loggedIn, setLoggedIn] = React.useState(false)
+    const [errMsg, setErrMsg] = React.useState('')
+    const [loginAttempts, setLoginAttempts] = React.useState(0)
 
-    console.log(username + " " + password);
+    const handleLogin = (e) => {
+        e.preventDefault();
+        let user = usernameProps.value
+        let password = passwordProps.value
 
-    //login successful/true if both values exist and match
-    let isLoggedIn = username && password && username === password;
+        console.log(user + ' ' + password)
 
-    setLoggedIn(isLoggedIn);
+        //login successful/true if both values exist and match
+        let isLoggedIn = (user && password && user === password)
 
-    if (!isLoggedIn) {
-      let newAttempt = attempts + 1;
+        if (!isLoggedIn) { 
+            let newAttempts = loginAttempts + 1
 
-      if (newAttempt === 5) {
-        setError(`Go Home..try later`);
-      } else {
-        setError(`Invalid username or password`);
-      }
-      setAttempts(newAttempt);
-      setUsers(users);
-    }
-  };
+            if (newAttempts === 5) {
+                setErrMsg('Maximum login attempts exceeded. You are blocked.'); 
+            }
+            else {
+                setErrMsg('Unsuccessful login attempt #'+newAttempts+' of 5'); 
+            }
+            setLoginAttempts(newAttempts)
+        } else {
+            setErrMsg('')
+            setUsername(user)
+        }
 
-  return (
-    <div
-      className="Login componentBox"
-      style={{
-        backgroundColor: themeContext.theme.background,
-        color: themeContext.theme.foreground,
-      }}
-    >
-      {/* if we're logged in, use the Hello component to say hello */}
-      <div>{loggedIn ? "Hello" + usernameProps.value : "Please log in"}</div>
-      {!loggedIn && attempts < 5 && (
-        <form onSubmit={handleLogin}>
-          <div className="formRow">
-            <label htmlFor="username">Username: </label>
-            {/* every time the input changes, store the latest value into state */}
-            <input id="username" {...usernameProps} />
-          </div>
+        setLoggedIn( isLoggedIn )
+    } 
 
-          {/* add another form field for email address */}
+    return (
+        <div className="Login componentBox">
 
-          <div className="formRow">
-            <label htmlFor="password">Password: </label>
-            {/* every time the input changes, store the latest value into state */}
-            <input type="password" id="password" {...passwordProps} />
-          </div>
+            <div>{loggedIn ? 'Hello '+username : 'Please log in'}</div>
 
-          <button>Login</button>
-        </form>
-      )}
-      {error && <div>{error}</div>}
-    </div>
-  );
+            {!loggedIn && loginAttempts < 5 &&
+
+                <form onSubmit={handleLogin}>
+                    <div className="formRow">
+                        <label htmlFor="username">Username: </label>
+                        {/* every time the input changes, store the latest value into state */}
+                        <input id="username" {...usernameProps} placeholder={username}/>
+                    </div>                  
+
+                    <div className="formRow">
+                        <label htmlFor="password">Password: </label>
+                        {/* every time the input changes, store the latest value into state */}
+                        <input type="password" id="password" {...passwordProps} />
+                    </div>
+
+                    <button>Login</button>
+                </form>
+            }
+            <p>{errMsg}</p>
+
+        </div>
+    );    
 }
 
-export default Login;
+export default Login

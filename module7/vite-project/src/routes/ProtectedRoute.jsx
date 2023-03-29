@@ -1,12 +1,16 @@
+
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import { UserContext } from "../context/userContext";
+import { Outlet, Navigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
-function ProtectedRoute ({redirectPath ='/dash', children}) {
-
+// see https://www.robinwieruch.de/react-router-private-routes/
+function ProtectedRoute({ redirectPath = '/dash', children }) {
     const {username} = useContext(UserContext)
     if (!username) {
         return <Navigate to={redirectPath} replace />;
     }
-    
+
+    return children ? children : <Outlet/>;
 }
+
+export default ProtectedRoute

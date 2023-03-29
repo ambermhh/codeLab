@@ -27,9 +27,6 @@ function NavBar() {
         <li>
           <NavLink to="/students">Students</NavLink>
         </li>
-        <li>
-          <NavLink to="/signin">Sign In</NavLink>
-        </li>
 
       </ul>
     </div>

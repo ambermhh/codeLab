@@ -1,5 +1,5 @@
 body{
-  background-color: rgba(18, 66, 58, 0.683);
+  background-color: rgb(251, 255, 254);
 }
 #root {
   max-width: 1280px;
@@ -28,14 +28,14 @@ body{
 .About{color: rgb(52, 92, 131);}
 
 .emoji{font-size: 80px;}
-.emoji-button{background-color:#e67d57;font-size: 20px;font-weight: bold;}
+.emoji-button{background-color:#F3A712;font-size: 20px;font-weight: bold;}
 
-.Dashboard button{background-color: #e67d57;}
-.WindowResizer button{background-color: #e67d57;}
-.Counter button{background-color: #e67d57;}
-.HookClockDisplay button{background-color: #e67d57;}
-.Login button{background-color: #e67d57;}
-.OnlineChat button {background-color: #e67d57;}
+.Dashboard button{background-color: #F3A712;}
+.WindowResizer button{background-color: #F3A712;}
+.Counter button{background-color: #F3A712;}
+.HookClockDisplay button{background-color: #F3A712;}
+.Login button{background-color: #F3A712;}
+.OnlineChat button {background-color: #F3A712;}
 
 .calculator {
   display: flex;
@@ -90,5 +90,7 @@ input[type="text"] {
 }
 
 .theme{font-size: 25px;color: #06220f;padding: 20px;}
-.theme-dark-button{background-color: #094a2e; color: aliceblue;}
-.theme-light-button{background-color: #f0f8ff;color: #094a2e;}
+.theme-dark-button{background-color: #387BDF; color: #FAFAFF;}
+.theme-light-button{background-color: #FAFAFF;color: #387BDF;}
+
+
