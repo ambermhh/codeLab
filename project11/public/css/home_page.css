@@ -1,0 +1,83 @@
+
+
+body {
+  margin: 5px;
+  background-image: url("/all_photos/fotor_2023-3-11_13_58_37.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  font-family: "Kanit", sans-serif;
+}
+
+
+.navbar {
+  font-size: 25px;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: brown;
+  text-decoration: none;
+}
+.navbar-brand:hover {
+  color: antiquewhite;
+}
+
+h1 {
+  position: relative;
+  bottom:46px;
+  font-size: 25px;
+  text-align: center;
+  color: antiquewhite;
+}
+.respects {
+  color: antiquewhite;
+  position: absolute;
+  bottom: 0;
+}
+
+.social {
+  list-style-type: none;
+  padding: 20px;
+  position: absolute;
+  bottom: -40px;
+  right: -10px;
+}
+.music {
+  position: relative;
+  left: 18em;
+  top: 5em;
+  color: rgb(232, 240, 85);
+  font-size: 45px;
+  font-weight: bold;
+  font-style: italic;
+}
+.memes {
+  position: relative;
+  top: 15em;
+  color: rgb(232, 240, 85);
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+.movies {
+  position: relative;
+  top: 21em;
+  right: 2em;
+  color: rgb(232, 240, 85);
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+}
+.relax {
+  position: relative;
+  top: 18em;
+  left: 2em;
+  color: rgb(232, 240, 85);
+  font-size: 33px;
+  font-weight: bold;
+  font-style: italic;
+}
+.main a:hover {
+  color: brown;
+  font-style: normal;
+}
+
