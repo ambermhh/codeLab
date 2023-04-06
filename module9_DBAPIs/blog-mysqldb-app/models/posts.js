@@ -26,14 +26,14 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    date: {
-      type: DataTypes.DATE,
+    UserID: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    references: {
+      references: {
         model: User, //reference to another model
-        key: 'id', //column name of the referenced model
-    }
+        key: "UserID", //column name of the referenced model
+      },
+    },
   },
   {
     sequelize: sequelizeInstance,

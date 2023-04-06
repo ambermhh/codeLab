@@ -18,23 +18,26 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      required: true,
-    },
     numLiked: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    references: {
+    UserID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
         model: User, //reference to another model
-        key: 'id', //column name of the referenced model
+        key: "UserID", //column name of the referenced model
+      },
     },
-    references: {
+    PostID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
         model: Post, //reference to another model
-        key: 'id', //column name of the referenced model
-    },
+        key: "PostID", //column name of the referenced model
+      },
+    }
   },
   {
     sequelize: sequelizeInstance,

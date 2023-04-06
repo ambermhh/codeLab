@@ -10,7 +10,7 @@ const getUsers = (res) => {
       throw err;
     });
 };
-const createUsers = (data, res) => {
+const createUser = (data, res) => {
   Models.User.create(data)
     .then(function (data) {
       res.send({ result: 200, data: data });
@@ -21,7 +21,7 @@ const createUsers = (data, res) => {
 };
 
 const updateUser = (req, res) => {
-  Models.User.update(req.body, { where: { id: req.params.id } })
+  Models.User.update(req.body, { where: { UserID: req.params.id } })
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
@@ -30,7 +30,7 @@ const updateUser = (req, res) => {
     });
 };
 const deleteUser = (req, res) => {
-  Models.User.destroy({ where: { id: req.params.id } })
+  Models.User.destroy({ where: { UserID: req.params.id } })
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
@@ -40,7 +40,7 @@ const deleteUser = (req, res) => {
 };
 module.exports = {
   getUsers,
-  createUsers,
+  createUser,
   updateUser,
   deleteUser
 };

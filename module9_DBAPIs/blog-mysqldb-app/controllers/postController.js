@@ -21,7 +21,7 @@ const createPost = (data, res) => {
 };
 
 const updatePost = (req, res) => {
-  Models.Post.update(req.body, { where: { id: req.params.id } })
+  Models.Post.update(req.body, { where: { PostID: req.params.id } })
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
@@ -30,7 +30,7 @@ const updatePost = (req, res) => {
     });
 };
 const deletePost = (req, res) => {
-  Models.Post.destroy({ where: { id: req.params.id } })
+  Models.Post.destroy({ where: { PostID: req.params.id } })
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
