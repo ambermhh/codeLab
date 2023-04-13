@@ -1,6 +1,7 @@
 module.exports = {
-    productController: require("../../controllers/productController"),
-    tagController: require("../../controllers/tagController"),
-    colorController: require("./colorController")
+  productController: require('./productController'),
+  colorConttroller: require('./colorController'),
+  tagController: require('./tagController')
+
   };
   

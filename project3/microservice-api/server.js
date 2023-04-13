@@ -6,8 +6,8 @@ require("dotenv").config();
 // parse requests of content-type -application / json;
 app.use(express.json());
 
-let microRoutes = require('./routes/microRoutes')
-app.use('/api/makeup', microRoutes)
+let makeupRoutes = require('./routes/makeupRoutes')
+app.use('/api/allMakeup', makeupRoutes)
 
 
 app.get("/", (req, res) => {
