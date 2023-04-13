@@ -15,13 +15,11 @@ Color.init(
     },
     Hex_value: {
       type: DataTypes.STRING,
-      allowNull: false,
-      require: true,
+      allowNull: true,
     },
     Color_name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      require: true,
+      allowNull: true,
     },
     ProductID: {
       type: DataTypes.INTEGER,

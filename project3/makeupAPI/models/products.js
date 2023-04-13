@@ -9,7 +9,6 @@ Product.init(
     ProductID: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
     },
     Name: {
@@ -17,29 +16,32 @@ Product.init(
       allowNull: false,
       required: true,
     },
-    image: {
-      type: DataTypes.STRING,
+    Image: {
+      type: DataTypes.STRING(2000),
       allowNull: true
     },
     Brand: {
       type: DataTypes.STRING,
-      allowNull: false,
-      required: true,
+      allowNull: true,
+
     },
     Price: {
       type: DataTypes.FLOAT,
-      allowNull: false,
-      require: true
+      allowNull: true,
     },
     Type: {
       type: DataTypes.STRING,
-      allowNull: false,
-      require: true
+      allowNull: true
     },
     Description: {
+        type: DataTypes.STRING(5000),
+        allowNull: true,
+      },
+      Category: {
         type: DataTypes.STRING,
         allowNull: true,
       },
+ 
   
   },
   {

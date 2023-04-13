@@ -1,18 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const Controllers = require("../controllers");
+const Controllers = require("../controllers/colorController");
 
 
 router.get("/", (req, res) => {
-  Controllers.colorController.getColor(res);
+  console.log("test")
+  Controllers.getColor(res);
+  console.log("test11")
+
 });
 router.post("/create", (req, res) => {
-  Controllers.colorController.createColor(req.body, res);
+  Controllers.createColor(req.body, res);
 });
 router.put("/:id", (req, res) => {
-  Controllers.colorController.updateColor(req, res);
+  Controllers.updateColor(req, res);
 });
 router.delete("/:id", (req, res) => {
-  Controllers.colorController.deleteColor(req, res);
+  Controllers.deleteColor(req, res);
 });
 module.exports = router;

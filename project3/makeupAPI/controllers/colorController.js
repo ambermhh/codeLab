@@ -1,6 +1,8 @@
 "use strict";
 
 const Models = require("../models");
+
+
 const getColor = (res) => {
   Models.Color.findAll({})
     .then(function (data) {
@@ -10,6 +12,7 @@ const getColor = (res) => {
       throw err;
     });
 };
+
 const createColor = (data, res) => {
   Models.Color.create(data)
     .then(function (data) {

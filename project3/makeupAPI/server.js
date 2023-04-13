@@ -13,8 +13,9 @@ app.use('/api/products', productRoutes)
 let colorRoutes = require('./routes/colorRoutes')
 app.use('/api/colors', colorRoutes)
 
-let tagRoutes = require('./routes/tagRoutes')
-app.use('/api/tags', tagRoutes)
+// let tagRoutes = require('./routes/tagRoutes');
+const controllers = require("./controllers/storeControllers");
+// app.use('/api/tags', tagRoutes)
 
 
 
@@ -28,4 +29,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+  controllers.storeProducts()
 });

@@ -1,6 +1,9 @@
 "use strict";
 
 const Models = require("../models");
+
+
+
 const getProduct = (res) => {
   Models.Product.findAll({})
     .then(function (data) {
@@ -38,10 +41,12 @@ const deleteProduct = (req, res) => {
       throw err;
     });
 };
+
+
 module.exports = {
   getProduct,
   createProduct,
   updateProduct,
   deleteProduct,
-  
+ 
 };
