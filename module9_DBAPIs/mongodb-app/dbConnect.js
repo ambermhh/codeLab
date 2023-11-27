@@ -3,7 +3,7 @@ const Mongoose = require("mongoose");
 const uri = process.env.DB_URI || "mongodb://localhost/myFirstDatabase";
 
 
-const mongooseOptions = {
+const mongooseOptions = {  // dont need this anymore as update new version
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
